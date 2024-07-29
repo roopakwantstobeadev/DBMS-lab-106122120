@@ -1,0 +1,100 @@
+a . SELECT YEAR(CURDATE());
+
+b . SELECT str_to_date('2024-07-18','%y-%m-%d') as valid_date;
+
+c . SELECT
+   SUM(ROUND(((DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024), 2)) AS "SIZE IN MB"
+   FROM INFORMATION_SCHEMA.TABLES
+   WHERE TABLE_SCHEMA = "SCHEMA-NAME";
+
+d . SELECT NOW();
+
+e . SELECT DATE_ADD("2024-07-18", INTERVAL 1 DAY);
+
+f . USE sampledb;
+    create table sampletable(
+        names varchar(100);
+    )
+    SELECT table_name, create_time
+    FROM information_schema.tables;
+    WHERE table_schema='testdb';
+
+g . SELECT CURRENT_TIMESTAMP();
+
+h . SELECT user , host from mysql.user;
+
+i . SELECT VERSION();
+
+j . SELECT 6&7;
+    SELECT 4^5;
+    SELECT 4|5;
+
+k . SELECT DATEDIFF("2005-06-13", "2024-07-26");
+
+l . SELECT DATE_ADD(CURRDATE(), INTERVAL 1 DAY);
+
+m . SELECT DATE_ADD(CURRDATE(), INTERVAL '2.5000' HOUR_MINUTE ) as next_date ;
+
+n . SELECT CEIL(78.2), FLOOR(42.2), POWER(9, 2), MOD(59, 3), ROUND(9.69, 0), TRUNCATE(7.49, 0);
+
+o . SELECT 'DBMS' = 'OS' AS RESULT;
+
+p . SELECT 
+    85 AS marks,
+    CASE
+        WHEN 85 >= 90 THEN 'A'
+        WHEN 85 >= 80 THEN 'B'
+        WHEN 85 >= 70 THEN 'C'
+        WHEN 85 >= 60 THEN 'D'
+        ELSE 'F'
+    END AS grade
+
+UNION ALL
+
+SELECT 
+    72 AS marks,
+    CASE
+        WHEN 72 >= 90 THEN 'A'
+        WHEN 72 >= 80 THEN 'B'
+        WHEN 72 >= 70 THEN 'C'
+        WHEN 72 >= 60 THEN 'D'
+        ELSE 'F'
+    END AS grade
+
+UNION ALL
+
+SELECT 
+    90 AS marks,
+    CASE
+        WHEN 90 >= 90 THEN 'A'
+        WHEN 90 >= 80 THEN 'B'
+        WHEN 90 >= 70 THEN 'C'
+        WHEN 90 >= 60 THEN 'D'
+        ELSE 'F'
+    END AS grade
+
+UNION ALL
+
+SELECT 
+    65 AS marks,
+    CASE
+        WHEN 65 >= 90 THEN 'A'
+        WHEN 65 >= 80 THEN 'B'
+        WHEN 65 >= 70 THEN 'C'
+        WHEN 65 >= 60 THEN 'D'
+        ELSE 'F'
+    END AS grade
+
+UNION ALL
+
+SELECT 
+    55 AS marks,
+    CASE
+        WHEN 55 >= 90 THEN 'A'
+        WHEN 55 >= 80 THEN 'B'
+        WHEN 55 >= 70 THEN 'C'
+        WHEN 55 >= 60 THEN 'D'
+        ELSE 'F'
+    END AS grade;
+
+q . SELECT IFNULL(55/0 , 0);
